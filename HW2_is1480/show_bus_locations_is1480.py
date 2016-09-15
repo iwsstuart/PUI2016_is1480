@@ -13,5 +13,8 @@ with open('test_data.json') as data:
 	 busCount = 0
 	 for i in activeBusData:
 	 	busCount+=1
+	 	lat = i['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
+	 	lon = i['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
+	 	print lat, lon
 	 print busName
 	 print busCount
