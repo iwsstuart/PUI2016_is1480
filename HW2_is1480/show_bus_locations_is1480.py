@@ -11,10 +11,12 @@ with open('test_data.json') as data:
 	 activeBusData = busDict['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity']
 	 busName = activeBusData[0]['MonitoredVehicleJourney']['PublishedLineName']
 	 busCount = 0
+	 locations = ""
 	 for i in activeBusData:
-	 	busCount+=1
 	 	lat = i['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
 	 	lon = i['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
-	 	print lat, lon
-	 print busName
-	 print busCount
+	 	locations = locations + "Bus " + str(busCount) + " is at latitude " + str(lat) + " and longitude " + str(lon) + "\n"
+	 	busCount+=1
+	 print "Bus Line : " + busName
+	 print "Number of Active Buses : " + str(busCount)
+	 print locations
