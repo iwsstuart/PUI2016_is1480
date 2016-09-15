@@ -8,4 +8,8 @@ import json
 
 with open('test_data.json') as data:
 	 busDict = json.load(data)
-	 print busDict.keys()
+	 busCount = 0
+	 for i in busDict['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity']:
+	 	busCount+=1
+
+	 print busCount
