@@ -2,9 +2,10 @@ import sys
 import json
 import urllib2 
 
-mtaKey = "6a40826c-4f43-4d81-834d-c20d8dc72a1d"
-# mtaKey = sys.argv[1]
-busLine = "B52"
+# mtaKey = "6a40826c-4f43-4d81-834d-c20d8dc72a1d"
+mtaKey = sys.argv[1]
+# busLine = "B52"
+busLine = sys.argv[2]
 
 url = "http://bustime.mta.info/api/siri/vehicle-monitoring.json?key=%s&VehicleMonitoringDetailLevel=calls&LineRef=%s"%(mtaKey, busLine)
 
