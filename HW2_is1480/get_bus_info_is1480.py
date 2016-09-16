@@ -12,7 +12,6 @@ busLine = sys.argv[2]
 url = "http://bustime.mta.info/api/siri/vehicle-monitoring.json?key=%s&VehicleMonitoringDetailLevel=calls&LineRef=%s"%(mtaKey, busLine)
 
 # load api response data into python dict
-# # response = open('test_data.json')
 response = urllib2.urlopen(url)
 data = response.read().decode("utf-8")
 busDict = json.loads(data)
@@ -27,8 +26,12 @@ allBuses = []
 for i in activeBusData:
 	lat = i['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
 	lon = i['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
-	stopName = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
-	stopStatus = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances']['PresentableDistance']
+	if i['MonitoredVehicleJourney']['OnwardCalls']:
+		stopName = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
+		stopStatus = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances']['PresentableDistance']
+	else:
+		stopName = "N/A"
+		stopStatus = "N/A"
 	singleBus = [lat, lon, stopName, stopStatus]
 	allBuses.append(singleBus)
 
