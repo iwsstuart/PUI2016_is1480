@@ -1,6 +1,7 @@
 import sys
 import json
 import urllib2 
+import csv
 
 mtaKey = "6a40826c-4f43-4d81-834d-c20d8dc72a1d"
 # mtaKey = sys.argv[1]
@@ -19,12 +20,19 @@ busDict = json.loads(data)
 # set variable to access individual bus data in nested dict structure
 activeBusData = busDict['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity']
 
-# # get lat/lon for each active bus, and total count
+# empy array for data from all buses
+allBuses = []
+
+# get lat/lon for each active bus, and next stop info
 for i in activeBusData:
 	lat = i['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
 	lon = i['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
-	status = i['MonitoredVehicleJourney']['MonitoredCall']['Extensions']['Distances']['PresentableDistance']
-	print lat, lon, status
+	stopName = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
+	stopStatus = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances']['PresentableDistance']
+	singleBus = [lat, lon, stopName, stopStatus]
+	allBuses.append(singleBus)
+
+print allBuses
 
 # # format output
 # print "Bus Line : " + busName
