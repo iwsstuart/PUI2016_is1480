@@ -12,3 +12,4 @@ I needed to spend some time studying a few regression examples to wrap my head a
 
 ## Assignment 3
 
+This assignment was completed on my own.
