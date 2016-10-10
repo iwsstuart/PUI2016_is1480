@@ -8,7 +8,7 @@ Pichot, Felipe Gonzalez, and Shay Lehmann about these questions.
 
 ## Assignment 2
 
-I needed to spend some time studying a few regression examples to wrap my head around how the problems were being constructed with Python, e.g. using the appropriate variable types, inputting vectors into regression functions, etc. I spoke with Chris Streich (who had worked with others) to get some insight on why my regression line was different than the analytical solution offered by @fedhere.
+I needed to spend some time studying a few regression examples to wrap my head around how the problems were being constructed with Python, e.g. using the appropriate variable types, inputting vectors into regression functions, etc. I spoke with Chris Streich (who had worked with others) to get some insight on why my regression line was different than the analytical solution offered by @fedhere. This also tipped me off to the fact that I had switched the axes relative to the "analytical" solution.
 
 ## Assignment 3
 
