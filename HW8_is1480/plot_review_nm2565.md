@@ -1,5 +1,7 @@
 ### Plot Review
 
+![alt text](plot_nm2565.png)
+
 This plot aims to show total steam consumption in commercial buildings by zip code in Manhattan, for a period of one year (2010). The plot
 is for the most part clear and readable. A bar plot is a good choice in this case to show relative quantities, and the differences in values
 here make for a clear representation in the plot.
